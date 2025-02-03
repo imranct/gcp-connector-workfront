@@ -34,9 +34,7 @@ This repository contains a **Google Cloud Function** that integrates **Adobe Wor
 
 ## **Project Structure**
 
-bash
 
-CopyEdit
 
 
 ```
@@ -70,9 +68,7 @@ Ensure you have:
 
 Run the following command to install required dependencies:
 
-bash
 
-CopyEdit
 
 
 ```
@@ -85,9 +81,6 @@ pip install -r requirements.txt
 
 Use the following command to deploy the function:
 
-bash
-
-CopyEdit
 
 
 ```
@@ -96,11 +89,11 @@ gcloud functions deploy workfront_webhook \
   --trigger-http \
   --allow-unauthenticated \
   --entry-point workfront_webhook \
-  --set-env-vars WORKFRONT_BUCKET_NAME=your-gcs-bucket-name
+  --set-env-vars WORKFRONT_BUCKET_NAME=workfront-bucket-poc
 ```
 
 
-Replace `your-gcs-bucket-name` with the actual **GCS bucket name** where events should be stored.
+Replace `workfront-bucket-poc` with the new **GCS bucket name** where events should be stored if you need to update **GCS Bucket**.
 
 
 ### **4. Configure Workfront Webhook**
@@ -110,9 +103,8 @@ Replace `your-gcs-bucket-name` with the actual **GCS bucket name** where events 
 * In **Adobe Workfront**, navigate to **Webhooks** settings.
 
 Set the webhook URL as: \
-arduino \
-CopyEdit \
-`https://REGION-PROJECT_ID.cloudfunctions.net/workfront_webhook`
+
+`https://us-central1-candt-voltron.cloudfunctions.net/workfront_webhook`
 
 
 
